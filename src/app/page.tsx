@@ -2,11 +2,12 @@ import { Logo } from "@/components/Logo";
 import { Section } from "@/components/Section";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 
-const WHATSAPP_PHONE_E164 = "5511999999999"; // <-- TROQUE para seu número (DDI+DDD+numero)
+const WHATSAPP_PHONE_E164 = "5511914976925"; // <-- TROQUE para seu número (DDI+DDD+numero)
 
 function Nav() {
   const items = [
     { href: "#servicos", label: "Serviços" },
+	{ href: "#segmentos", label: "Segmentos" }, // ← NOVO
     { href: "#diferenciais", label: "Diferenciais" },
     { href: "#metodologia", label: "Metodologia" },
     { href: "#contato", label: "Contato" },
@@ -149,6 +150,44 @@ export default function Page() {
           </div>
         </div>
       </section>
+	        {/* BANNER PREMIUM */}
+      <section className="py-10">
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="rounded-3xl border border-slate-200 bg-white p-6 md:p-8 shadow-sm">
+            <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+              <div className="max-w-3xl">
+                <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-medium text-blue-800">
+                  Posicionamento consultivo • Execução prática • Escala com parceiros
+                </div>
+                <h2 className="mt-3 text-xl md:text-2xl font-semibold text-slate-900">
+                  Visão de consultoria, entrega de operação.
+                </h2>
+                <p className="mt-2 text-slate-600">
+                  A Rcom Consulting leva práticas e padrões de ambientes corporativos para PMEs, com um modelo consultivo que
+                  organiza a tecnologia e sustenta o crescimento. Quando necessário, acionamos especialistas parceiros para ampliar
+                  a capacidade de entrega mantendo qualidade e agilidade.
+                </p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-3">
+                <a
+                  href="#contato"
+                  className="inline-flex justify-center rounded-xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white hover:bg-blue-700"
+                >
+                  Solicitar diagnóstico
+                </a>
+                <a
+                  href="#diferenciais"
+                  className="inline-flex justify-center rounded-xl border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-800 hover:bg-slate-50"
+                >
+                  Ver diferenciais
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       {/* SERVIÇOS */}
       <Section
@@ -196,6 +235,60 @@ export default function Page() {
           ))}
         </div>
       </Section>
+	        {/* SEGMENTOS ATENDIDOS */}
+      <Section
+         id="segmentos"
+		title="Segmentos atendidos"
+        subtitle="Atuamos com empresas de pequeno e médio porte que precisam de estrutura, segurança e evolução tecnológica — com foco no que gera resultado."
+      >
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {[
+            {
+              t: "Indústrias e operações",
+              d: "Ambientes que exigem estabilidade, continuidade operacional e controle de infraestrutura.",
+            },
+            {
+              t: "Logística e transporte",
+              d: "Tecnologia para suportar operação 24/7, conectividade, disponibilidade e segurança.",
+            },
+            {
+              t: "Escritórios e serviços",
+              d: "Padronização, segurança, backup e organização de TI para produtividade e previsibilidade.",
+            },
+            {
+              t: "Saúde e clínicas",
+              d: "Boas práticas de segurança, acesso, backups e continuidade para rotinas críticas.",
+            },
+            {
+              t: "Construção e campo",
+              d: "Infra e suporte para operação distribuída, conectividade e rotinas fora do escritório.",
+            },
+            {
+              t: "Empresas com alto volume documental",
+              d: "Organização digital, processos e automação para reduzir retrabalho e ganho de eficiência.",
+            },
+          ].map((s) => (
+            <div key={s.t} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+              <div className="font-semibold text-slate-900">{s.t}</div>
+              <p className="mt-2 text-slate-600">{s.d}</p>
+              <div className="mt-4 text-sm">
+                <a href="#contato" className="font-semibold text-blue-700 hover:text-blue-800">
+                  Solicitar diagnóstico →
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-8 rounded-2xl border border-slate-200 bg-slate-50 p-6">
+          <div className="font-semibold text-slate-900">Não viu seu segmento aqui?</div>
+          <p className="mt-2 text-slate-600">
+            Sem problema. O diagnóstico avalia o cenário atual e define um plano de evolução adequado ao seu tipo de operação,
+            tamanho e prioridades.
+          </p>
+        </div>
+      </Section>
+
 
       {/* DIFERENCIAIS */}
       <Section
@@ -301,7 +394,7 @@ export default function Page() {
             {/* Opção A: mailto (zero custo, sem backend) */}
             <form
               className="mt-5 space-y-3"
-              action="mailto:contato@rcomconsulting.com.br"
+              action="mailto:rcom.consultoria@gmail.com"
               method="post"
               encType="text/plain"
             >

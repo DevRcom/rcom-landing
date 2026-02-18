@@ -1,6 +1,6 @@
 export function WhatsAppFloat({ phoneE164 }: { phoneE164: string }) {
   const link = `https://wa.me/${phoneE164.replace(/\D/g, "")}?text=${encodeURIComponent(
-    "Olá! Quero solicitar um diagnóstico estratégico de TI para minha empresa."
+    "Olá! Sou da Rcom Consulting e quero iniciar um diagnóstico estratégico de TI para minha empresa."
   )}`;
 
   return (
