@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Script from "next/script";
 
 const siteName = "Rcom Consulting";
 const siteUrl = "https://rcom-landing.vercel.app"; // TROQUE quando tiver domínio
@@ -83,6 +84,18 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
+	<Script
+  src="https://www.googletagmanager.com/gtag/js?id=G-EW4T661PN0"
+  strategy="afterInteractive"
+/>
+<Script id="google-analytics" strategy="afterInteractive">
+  {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-EW4T661PN0');
+  `}
+</Script>
       <body>{children}</body>
     </html>
   );
