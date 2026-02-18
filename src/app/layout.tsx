@@ -18,16 +18,12 @@ export const metadata: Metadata = {
 
   // ✅ Keywords estratégicas (do jeito certo: poucas, objetivas, sem stuffing)
   keywords: [
-
-  "consultoria em TI",
-  "infraestrutura empresarial",
-  "suporte TI PME",
-  "transformação digital empresas",
-  "cloud e segurança",
-  "consultoria tecnologia São Paulo",
-  "consultoria TI Barueri",
-  "consultoria TI Osasco",
-  "suporte TI Zona Oeste SP",
+    "consultoria em TI",
+    "infraestrutura empresarial",
+    "suporte TI PME",
+    "transformação digital empresas",
+    "cloud e segurança",
+    "consultoria tecnologia São Paulo",
   ],
 
   alternates: {
