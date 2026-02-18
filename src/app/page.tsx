@@ -11,6 +11,7 @@ function Nav() {
     { href: "#diferenciais", label: "Diferenciais" },
     { href: "#metodologia", label: "Metodologia" },
     { href: "#contato", label: "Contato" },
+	{ href: "/diagnostico", label: "Diagnóstico" },
   ];
   
   const jsonLd = {
