@@ -1,13 +1,10 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const siteUrl = "https://rcom-landing.vercel.app"; // <-- troque quando tiver domínio
-  const lastModified = new Date();
-
   return [
     {
-      url: siteUrl,
-      lastModified,
+      url: "https://rcom-landing.vercel.app",
+      lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,
     },
