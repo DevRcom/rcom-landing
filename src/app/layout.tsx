@@ -18,12 +18,16 @@ export const metadata: Metadata = {
 
   // ✅ Keywords estratégicas (do jeito certo: poucas, objetivas, sem stuffing)
   keywords: [
-    "consultoria em TI",
-    "infraestrutura empresarial",
-    "suporte TI PME",
-    "transformação digital empresas",
-    "cloud e segurança",
-    "consultoria tecnologia São Paulo",
+
+  "consultoria em TI",
+  "infraestrutura empresarial",
+  "suporte TI PME",
+  "transformação digital empresas",
+  "cloud e segurança",
+  "consultoria tecnologia São Paulo",
+  "consultoria TI Barueri",
+  "consultoria TI Osasco",
+  "suporte TI Zona Oeste SP",
   ],
 
   alternates: {
@@ -76,16 +80,7 @@ export const metadata: Metadata = {
   // ✅ Ajuda SEO local/credibilidade para alguns crawlers
   applicationName: siteName,
   category: "technology",
-  keywords: [
-  "consultoria em TI",
-  "infraestrutura empresarial",
-  "suporte TI PME",
-  "transformação digital empresas",
-  "cloud e segurança",
-  "consultoria tecnologia São Paulo",
-  "consultoria TI Barueri",
-  "consultoria TI Osasco",
-  "suporte TI Zona Oeste SP",
+
 ],
 };
 
