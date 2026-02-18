@@ -2,34 +2,20 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 const siteName = "Rcom Consulting";
-const siteUrl = "https://rcom-landing.vercel.app"; // TROQUE quando tiver domínio
 const siteDescription =
-  "Consultoria estratégica em tecnologia para pequenas e médias empresas na Grande São Paulo (Zona Oeste, Barueri e Osasco). Infraestrutura, cloud, segurança, automação e transformação digital com execução prática.";
+  "Consultoria estratégica em tecnologia para pequenas e médias empresas. Infraestrutura, cloud, segurança, automação e transformação digital com execução prática.";
+const siteUrl = "https://rcom-landing.vercel.app"; // <-- troque quando tiver domínio
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-
   title: {
     default: `${siteName} | Consultoria Estratégica em Tecnologia`,
     template: `%s | ${siteName}`,
   },
-
   description: siteDescription,
-
-  // ✅ Keywords estratégicas (do jeito certo: poucas, objetivas, sem stuffing)
-  keywords: [
-    "consultoria em TI",
-    "infraestrutura empresarial",
-    "suporte TI PME",
-    "transformação digital empresas",
-    "cloud e segurança",
-    "consultoria tecnologia São Paulo",
-  ],
-
   alternates: {
     canonical: "/",
   },
-
   robots: {
     index: true,
     follow: true,
@@ -41,8 +27,6 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-
-  // ✅ Open Graph (WhatsApp/LinkedIn)
   openGraph: {
     type: "website",
     url: siteUrl,
@@ -52,41 +36,22 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     images: [
       {
-        url: "/og.png",
+        url: "/og.png", // vamos criar no passo 4
         width: 1200,
         height: 630,
         alt: `${siteName} - Consultoria Estratégica em Tecnologia`,
       },
     ],
   },
-
-  // ✅ Twitter Card
   twitter: {
     card: "summary_large_image",
     title: `${siteName} | Consultoria Estratégica em Tecnologia`,
     description: siteDescription,
     images: ["/og.png"],
   },
-
-  // ✅ Acabamento
   icons: {
     icon: "/favicon.ico",
   },
-
-  // ✅ Ajuda SEO local/credibilidade para alguns crawlers
-  applicationName: siteName,
-  category: "technology",
-  keywords: [
-  "consultoria em TI",
-  "infraestrutura empresarial",
-  "suporte TI PME",
-  "transformação digital empresas",
-  "cloud e segurança",
-  "consultoria tecnologia São Paulo",
-  "consultoria TI Barueri",
-  "consultoria TI Osasco",
-  "suporte TI Zona Oeste SP",
-],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

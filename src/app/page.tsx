@@ -12,6 +12,18 @@ function Nav() {
     { href: "#metodologia", label: "Metodologia" },
     { href: "#contato", label: "Contato" },
   ];
+  
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "Rcom Consulting",
+    url: "https://rcom-landing.vercel.app",
+    areaServed: "BR",
+    description:
+      "Consultoria estratégica em tecnologia para pequenas e médias empresas: infraestrutura, cloud, segurança, automação e transformação digital.",
+    sameAs: [],
+    telephone: "+55 11 91497-6925",
+  };
 
   return (
     <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/80 backdrop-blur">
@@ -66,10 +78,29 @@ function Card({
   );
 }
 
+
 export default function Page() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "Rcom Consulting",
+    url: "https://rcom-landing.vercel.app",
+    areaServed: ["São Paulo (Zona Oeste)", "Barueri", "Osasco", "Grande São Paulo"],
+    description:
+      "Consultoria estratégica em tecnologia para pequenas e médias empresas. Infraestrutura, cloud, segurança, automação e transformação digital com execução prática.",
+    telephone: "+55 11 91497-6925",
+  };
+
   return (
     <main className="min-h-screen bg-white">
       <Nav />
+
+      {/* JSON-LD (SEO) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       <WhatsAppFloat phoneE164={WHATSAPP_PHONE_E164} />
 
       {/* HERO */}
@@ -82,15 +113,15 @@ export default function Page() {
                 Consultoria estratégica acessível para PMEs
               </div>
 
-              <h1 className="mt-4 text-3xl md:text-5xl font-semibold tracking-tight text-slate-900">
-                Tecnologia Estratégica para Empresas que Querem Crescer com Segurança
-              </h1>
+				<h1 className="mt-4 text-3xl md:text-5xl font-semibold tracking-tight text-slate-900">
+					Consultoria em TI para PMEs: tecnologia estratégica para crescer com segurança
+				</h1>
 
-              <p className="mt-5 text-slate-700 leading-relaxed">
-                A Rcom Consulting ajuda pequenas e médias empresas a organizar, modernizar e evoluir sua infraestrutura tecnológica
-                com visão estratégica, reduzindo riscos operacionais e preparando o ambiente para o crescimento sustentável.
-              </p>
-
+				<p className="mt-5 text-slate-700 leading-relaxed">
+					 A Rcom Consulting apoia pequenas e médias empresas com consultoria em TI, organizando infraestrutura empresarial,
+					segurança e cloud para reduzir riscos operacionais e preparar o ambiente para o crescimento sustentável.
+					Atendemos a Grande São Paulo com foco na Zona Oeste, Barueri e Osasco, além de suporte remoto conforme a necessidade.
+			   </p>
               <p className="mt-4 text-slate-600 leading-relaxed">
                 Levamos para o universo PME uma abordagem estruturada, prática e orientada a resultados — com suporte de especialistas parceiros
                 quando necessário para garantir qualidade e escala nas entregas.
@@ -150,6 +181,9 @@ export default function Page() {
           </div>
         </div>
       </section>
+	  
+	  
+	
 	        {/* BANNER PREMIUM */}
       <section className="py-10">
         <div className="mx-auto max-w-6xl px-4">
@@ -168,6 +202,10 @@ export default function Page() {
                   a capacidade de entrega mantendo qualidade e agilidade.
                 </p>
               </div>
+			    <div className="mt-4 text-sm text-slate-600">
+				<span className="font-semibold text-slate-900">Área de atendimento:</span>{" "}
+				Grande São Paulo (Zona Oeste • Barueri • Osasco) e remoto.
+				</div>
 
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
@@ -377,6 +415,46 @@ export default function Page() {
           </div>
         </div>
       </Section>
+	        {/* FAQ (SEO PRO) */}
+      <Section
+        title="Perguntas frequentes"
+        subtitle="Respostas rápidas para dúvidas comuns de pequenas e médias empresas."
+      >
+        <div className="grid gap-4 md:grid-cols-2">
+          {[
+            {
+              q: "A Rcom Consulting faz suporte de TI para PME?",
+              a: "Sim. Atuamos com um modelo consultivo, combinando suporte e gestão tecnológica contínua. A ideia é reduzir emergências, organizar o ambiente e evoluir a tecnologia com previsibilidade.",
+            },
+            {
+              q: "Vocês atuam com infraestrutura empresarial e troca de equipamentos?",
+              a: "Sim. Avaliamos o cenário atual, definimos prioridades e executamos upgrades de infraestrutura, redes, servidores, backup e segurança, conforme a necessidade da operação.",
+            },
+            {
+              q: "A consultoria inclui cloud e segurança?",
+              a: "Sim. Projetamos e estruturamos soluções em nuvem, backup e políticas de segurança para aumentar continuidade operacional e reduzir riscos.",
+            },
+            {
+              q: "Vocês fazem transformação digital para pequenas empresas?",
+              a: "Sim. Trabalhamos com digitalização de processos, automação e organização documental para aumentar eficiência e reduzir retrabalho.",
+            },
+            {
+              q: "Atendem São Paulo?",
+              a: "Sim. Atendemos São Paulo e região, além de suporte remoto para empresas que precisam de acompanhamento contínuo.",
+            },
+            {
+              q: "Como funciona o diagnóstico estratégico?",
+              a: "Mapeamos o ambiente, identificamos riscos e oportunidades e entregamos um plano com prioridades, recomendações e próximos passos para evolução da TI.",
+            },
+          ].map((item) => (
+            <div key={item.q} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+              <div className="font-semibold text-slate-900">{item.q}</div>
+              <p className="mt-2 text-slate-600">{item.a}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
 
       {/* CONTATO */}
       <Section
