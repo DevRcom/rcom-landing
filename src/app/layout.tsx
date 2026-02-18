@@ -77,7 +77,7 @@ export const metadata: Metadata = {
   applicationName: siteName,
   category: "technology",
 
-],
+
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
