@@ -80,16 +80,61 @@ function Card({
 
 
 export default function Page() {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    name: "Rcom Consulting",
-    url: "https://rcom-landing.vercel.app",
-    areaServed: ["São Paulo (Zona Oeste)", "Barueri", "Osasco", "Grande São Paulo"],
-    description:
-      "Consultoria estratégica em tecnologia para pequenas e médias empresas. Infraestrutura, cloud, segurança, automação e transformação digital com execução prática.",
-    telephone: "+55 11 91497-6925",
-  };
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "Rcom Consulting",
+  url: "https://rcom-landing.vercel.app",
+  telephone: "+55 11 91497-6925",
+  areaServed: [
+    "Barueri",
+    "Osasco",
+    "Zona Oeste São Paulo",
+    "Grande São Paulo"
+  ],
+  serviceArea: {
+    "@type": "GeoCircle",
+    geoMidpoint: {
+      "@type": "GeoCoordinates",
+      latitude: -23.5329,
+      longitude: -46.7917
+    },
+    geoRadius: 25000
+  },
+  makesOffer: [
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Consultoria em TI"
+      }
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Infraestrutura Empresarial"
+      }
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Cloud e Segurança"
+      }
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Transformação Digital"
+      }
+    }
+  ],
+  description:
+    "Consultoria estratégica em tecnologia para pequenas e médias empresas na Grande São Paulo (Zona Oeste, Barueri e Osasco)."
+};
+
 
   return (
     <main className="min-h-screen bg-white">
